@@ -3,6 +3,8 @@
   justify-content: center;
   flex-wrap: wrap;
   overflow: hidden;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .item {
@@ -10,12 +12,14 @@
   max-width: 300px;
   border: 1px solid black;
   padding: 5px 5px 20px 5px;
-  margin: 10px;
+  margin: 5px;
+  box-sizing: border-box;
 }
 
 .item--active {
   color: white;
   background-color: #695c5c;
+  border-color: transparent;
 }
 
 .title {
