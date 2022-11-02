@@ -10,14 +10,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="body">
+  <header class="header">
+    <form class="search-form">
+      <input type="search">
+    </form>
+  </header>
+
   <main class="main">
 
     <template id="item">
       <article class="item">
-        <h3 class="title"></h3>
-        <p class="body"></p>
-        <input class="switcher" type="checkbox" />
+        <h3 class="item__title"></h3>
+        <p class="item__body"></p>
+        <input class="item__switcher" type="checkbox" />
       </article>
     </template>
 
