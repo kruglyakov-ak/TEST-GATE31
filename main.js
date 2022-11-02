@@ -1,7 +1,14 @@
+let backendUrl =
+  "https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=7";
+const queryString = window.location.search;
+const params = new URLSearchParams(queryString);
+
+if (params.get("search")) {
+  backendUrl += `&title_like=${params.get("search")}`;
+}
+
 const fetchData = async () => {
-  const data = await fetch(
-    "https://jsonplaceholder.typicode.com/posts/?_start=0&_limit=7"
-  );
+  const data = await fetch(backendUrl);
   return await data.json();
 };
 
@@ -43,4 +50,21 @@ fetchData().then((data) => {
   data.map((item) =>
     document.querySelector(".main").appendChild(createItem(item))
   );
+});
+
+const searchForm = document.querySelector(".search-form");
+
+if (params.get("search")) {
+  searchForm
+    .querySelector(".search-form__input")
+    .setAttribute("value", params.get("search"));
+}
+
+searchForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  if (evt.target[0].value) {
+    location.replace(`${location.pathname}?search=${evt.target[0].value}`);
+  } else {
+    location.replace(location.pathname);
+  }
 });
