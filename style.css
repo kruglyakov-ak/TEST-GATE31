@@ -5,8 +5,9 @@
 
 .search-form {
   padding: 15px 0;
-  margin: 0 5px;
+  margin: 0 5px 0 auto;
   display: flex;
+  max-width: 300px;
 }
 
 .search-form__input {
@@ -28,6 +29,10 @@
   padding: 5px 5px 20px 5px;
   margin: 5px;
   box-sizing: border-box;
+}
+
+.item:last-child {
+  margin-right: auto;
 }
 
 .item--active {
