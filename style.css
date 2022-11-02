@@ -18,10 +18,11 @@
   height: 50px;
   border: 1px solid black;
   border-right: none;
+  padding-left: 10px;
 }
 
 .search-form__button {
-  transition: .5s;
+  transition: 0.5s;
 
   width: 100px;
   height: 50px;
@@ -33,7 +34,7 @@
 
 .search-form__button:hover,
 .search-form__button:focus {
-  transition: .2s;
+  transition: 0.2s;
   color: white;
   background-color: #695c5c;
   border-color: transparent;
@@ -53,11 +54,11 @@
   padding: 5px 5px 20px 5px;
   margin: 5px;
   box-sizing: border-box;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .item--active {
-  transition: .5s;
+  transition: 0.5s;
   color: white;
   background-color: #695c5c;
   border-color: transparent;
@@ -72,7 +73,37 @@
 
 .item__switcher {
   position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.item__checkbox {
+  position: absolute;
+  width: 24px;
+  height: 24px;
   bottom: 5px;
+  cursor: pointer;
+  background-size: 24px 24px;
+  background-image: url("img/moon.svg");
+  transition: 1s;
+}
+
+.item__checkbox:hover {
+  transform: rotate(180deg);
+  transition: 1s;
+}
+
+.item__checkbox--checked {
+  background-image: url("img/sun.svg");
+  transition: 3s;
+}
+
+.item__checkbox--checked:hover {
+  transform: rotate(360deg);
+  transition: 3s;
 }
 
 @media (min-width: 930px) {

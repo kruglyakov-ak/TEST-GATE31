@@ -13,8 +13,10 @@ const fetchData = async () => {
 };
 
 const switcherChangeHandler = ({ target }) => {
-  const item = target.parentElement;
+  const item = target.parentElement.parentElement;
+  const label = target.parentElement;
   item.classList.toggle("item--active");
+  label.classList.toggle("item__checkbox--checked");
 };
 
 const itemTemplate = document
