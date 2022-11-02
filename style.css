@@ -1,10 +1,13 @@
+.body {
+  max-width: 930px;
+  margin: 0 auto;
+}
+
 .main {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   overflow: hidden;
-  max-width: 960px;
-  margin: 0 auto;
 }
 
 .item {
@@ -22,14 +25,14 @@
   border-color: transparent;
 }
 
-.title {
+.item__title {
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.switcher {
+.item__switcher {
   position: absolute;
   bottom: 5px;
 }

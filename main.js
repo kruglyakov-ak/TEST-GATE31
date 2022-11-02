@@ -16,9 +16,9 @@ const itemTemplate = document
 
 const createItem = (data) => {
   const item = itemTemplate.cloneNode(true);
-  const title = item.querySelector(".title");
-  const body = item.querySelector(".body");
-  const switcher = item.querySelector(".switcher");
+  const title = item.querySelector(".item__title");
+  const body = item.querySelector(".item__body");
+  const switcher = item.querySelector(".item__switcher");
   const isActive = switcher.hasAttribute("checked");
 
   if (data.title) {
