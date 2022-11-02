@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.item {
+  max-width: 300px;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+}
+
+.item--active {
+  color: white;
+  background-color: #695c5c;
+}
+
+.title {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
