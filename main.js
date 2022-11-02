@@ -5,24 +5,42 @@ const fetchData = async () => {
   return await data.json();
 };
 
+const switcherChangeHandler = ({ target }) => {
+  const item = target.parentElement;
+  item.classList.toggle("item--active");
+};
+
 const itemTemplate = document
   .querySelector("#item")
   .content.querySelector(".item");
 
 const createItem = (data) => {
   const item = itemTemplate.cloneNode(true);
+  const title = item.querySelector(".title");
+  const body = item.querySelector(".body");
+  const switcher = item.querySelector(".switcher");
+  const isActive = switcher.hasAttribute("checked");
 
   if (data.title) {
-    item.querySelector(".title").textContent = data.title;
+    title.textContent = data.title;
+    title.setAttribute("title", data.title);
   }
 
   if (data.body) {
-    item.querySelector(".body").textContent = data.body;
+    body.textContent = data.body;
   }
+
+  if (isActive) {
+    item.classList.add("item--active");
+  }
+
+  switcher.addEventListener("change", switcherChangeHandler);
 
   return item;
 };
 
 fetchData().then((data) => {
-  data.map((item) => document.querySelector('.main').appendChild(createItem(item)));
+  data.map((item) =>
+    document.querySelector(".main").appendChild(createItem(item))
+  );
 });
