@@ -5,7 +5,7 @@
 
 .search-form {
   padding: 15px 0;
-  margin: 0 5px 0 auto;
+  margin: 0 auto;
   display: flex;
   max-width: 300px;
 }
@@ -31,10 +31,6 @@
   box-sizing: border-box;
 }
 
-.item:last-child {
-  margin-right: auto;
-}
-
 .item--active {
   color: white;
   background-color: #695c5c;
@@ -51,4 +47,14 @@
 .item__switcher {
   position: absolute;
   bottom: 5px;
+}
+
+@media (min-width: 930px) {
+  .item:last-child {
+    margin-right: auto;
+  }
+
+  .search-form {
+    margin: 0 5px 0 auto;
+  }
 }
