@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 .body {
   max-width: 930px;
   margin: 0 auto;
+  font-family: "Roboto", sans-serif;
 }
 
 .search-form {
@@ -13,6 +16,27 @@
 .search-form__input {
   width: 100%;
   height: 50px;
+  border: 1px solid black;
+  border-right: none;
+}
+
+.search-form__button {
+  transition: .5s;
+
+  width: 100px;
+  height: 50px;
+  border-radius: 0;
+  border: 1px solid black;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.search-form__button:hover,
+.search-form__button:focus {
+  transition: .2s;
+  color: white;
+  background-color: #695c5c;
+  border-color: transparent;
 }
 
 .main {
@@ -29,9 +53,11 @@
   padding: 5px 5px 20px 5px;
   margin: 5px;
   box-sizing: border-box;
+  transition: .5s;
 }
 
 .item--active {
+  transition: .5s;
   color: white;
   background-color: #695c5c;
   border-color: transparent;
